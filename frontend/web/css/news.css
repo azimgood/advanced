@@ -6,6 +6,68 @@
   font-size: 16px;
   color: #515B5E;
 }
-.myclass{
-  
+.header{
+  float: none;
+  padding: 0;
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  height: auto;
 }
+.navbar-header{
+  float: none;
+  background: #2B0E00;
+}
+.navbar{
+  border: 0;
+}
+.links{
+  float: none;
+}
+.top{
+  height: 60px;
+  background-color: #7A7A7A;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.footer{
+  height: 60px;
+  padding-top: 20px;
+  display: block;
+  background-color: #FFFFFF;
+  border-top: 1px solid #000;
+}
+.footer div{
+  padding: 10px;
+  font-size: 16px;
+  color: #8d8d8d;
+}
+
+div.colC5 {
+    width: 19%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+div.colC4 {
+    width: 24%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+.vLine {
+    border-left: 1px solid #000000;
+    border-color: #8d8d8d;
+}
+/*.links-bottom{
+  padding-left: 60px;
+  width: 550px;
+  height: 100%;
+  margin: 0 auto;
+  float: none;
+}*/

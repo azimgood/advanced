@@ -27,32 +27,58 @@ AppAsset::register($this);
 
 <div class="wrap">
     <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+    $menuItems1 = [
+        ['options' => ['class' => 'left'],'label' => '<img width = "42px" height = "42px" src = "../../images/cogwheel_LG_4.png" />', 'url' => ['/news/news/index']],
+        ['options' => ['class' => 'right'],'label' => '<img width = "42px" height = "42px" src = "../../images/mglass_gray2.png" />', 'url' => ['/news/news/index']],
+
     ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = [
-            'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-            'url' => ['/site/logout'],
-            'linkOptions' => ['data-method' => 'post']
-        ];
-    }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
+        'options' => ['class' => 'top'],
+        'items' => $menuItems1,
+        'encodeLabels' => false,
+        'activateItems' => false,
+        'activateParents' => false,
+
+
     ]);
+    NavBar::begin([
+
+        'options' => [
+
+        ],
+
+        'brandLabel' => '<img src = "../../images/map_yellow.jpg"/>',
+        'brandUrl' => Yii::$app->homeUrl,
+        'brandOptions' => [
+          'class' => 'header'
+        ],
+        'renderInnerContainer' => true,
+        'innerContainerOptions' => [
+            'class' => 'container1'
+        ],
+
+    ]);
+    // $menuItems = [
+    //     ['label' => 'Home', 'url' => ['/site/index']],
+    //     ['label' => 'About', 'url' => ['/site/about']],
+    //     ['label' => 'Contact', 'url' => ['/site/contact']],
+    // ];
+    // if (Yii::$app->user->isGuest) {
+    //     $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+    //     $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+    // } else {
+    //     $menuItems[] = [
+    //         'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+    //         'url' => ['/site/logout'],
+    //         'linkOptions' => ['data-method' => 'post']
+    //     ];
+    // }
+    //
+    // echo Nav::widget([
+    //     'options' => ['class' => 'links navbar-nav navbar-right'],
+    //     'items' => $menuItems,
+    //
+    // ]);
     NavBar::end();
     ?>
 
@@ -66,11 +92,39 @@ AppAsset::register($this);
 </div>
 
 <footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+    <div>
+        <div class="colC5">
+            <?= Html::a('О компании MITWORK', ['/site/about']) ?>
+        </div>
+        <div class="colC5 vLine">
+            <?= Html::a('Карта Сайта', ['#']) ?>
+        </div>
+        <div class="colC5 vLine">
+            <?= Html::a('Новости', ['/news/news/index']) ?>
+        </div>
+        <div class="colC5 vLine">
+            <?= Html::a('RSS', ['#']) ?>
+        </div>
+        <div class="colC5 vLine">
+            <?= Html::a('Контакты', ['/site/contact']) ?>
+        </div>
     </div>
+
+    <div>
+        <div class="colC4">
+        </div>
+        <div class="colC4">
+            <?= Html::a('Условия использования', ['#']) ?>
+        </div>
+        <div class="colC4 vLine">
+            <?= Html::a('Политика конфиденциальности', ['#']) ?>
+        </div>
+    </div>
+
+    <div>
+            <c>ТOO MITWORK 2015 год. Все права защищены </c>
+    </div>
+
 </footer>
 
 <?php $this->endBody() ?>
