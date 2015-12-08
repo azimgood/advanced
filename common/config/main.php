@@ -24,13 +24,13 @@ return [
       ],
     ],
 
-    // 'as access' => [
-    // 'class' => 'mdm\admin\components\AccessControl',
-    //     'allowActions' => [
-    //         'site/login',
-    //         'site/error',
-    //         'site/logout',
-    //         'frontend/news/news/index',
-    //     ]
-    // ],
+    'as access' => [
+    'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            'site/login',
+            'site/error',
+            'site/logout',
+            'frontend/news/news/index',
+        ]
+    ],
 ];

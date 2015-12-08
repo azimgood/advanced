@@ -21,6 +21,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link rel="icon" type="image/png" href="../../images/favicon-16x16.png" sizes="16x16">
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -28,24 +29,24 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     $menuItems1 = [
-        ['options' => ['class' => 'left'],'label' => '<img width = "42px" height = "42px" src = "../../images/cogwheel_LG_4.png" />', 'url' => ['/news/news/index']],
-        ['options' => ['class' => 'right'],'label' => '<img width = "42px" height = "42px" src = "../../images/mglass_gray2.png" />', 'url' => ['/news/news/index']],
+        ['options' => ['class' => 'col-md-3 left'],'label' => '<img width = "42px" height = "42px" src = "../../images/cogwheel_LG_4.png" />', 'url' => ['/news/news/index']],
+        ['options' => ['class' => 'link-a col-md-3 center'],'label' => 'ЕЭП', 'url' => ['/news/news/index']],
+        ['options' => ['class' => 'link-a col-md-3 center'],'label' => 'Поддержка', 'url' => ['/news/news/index']],
+        ['options' => ['class' => 'col-md-3 right'],'label' => '<img width = "42px" height = "42px" src = "../../images/mglass_gray2.png" />', 'url' => ['/news/news/index']],
 
-    ];
-    echo Nav::widget([
-        'options' => ['class' => 'top'],
-        'items' => $menuItems1,
-        'encodeLabels' => false,
-        'activateItems' => false,
-        'activateParents' => false,
-
-
-    ]);
+    ];?>
+    <div class = "container-fluid top">
+      <div class = "row">
+        <?php
+        echo Nav::widget([
+            'items' => $menuItems1,
+            'encodeLabels' => false,
+        ]);
+        ?>
+      </div>
+    </div>
+    <?php
     NavBar::begin([
-
-        'options' => [
-
-        ],
 
         'brandLabel' => '<img src = "../../images/map_yellow.jpg"/>',
         'brandUrl' => Yii::$app->homeUrl,
@@ -82,7 +83,7 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="container-fluid">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -92,37 +93,40 @@ AppAsset::register($this);
 </div>
 
 <footer class="footer">
-    <div>
-        <div class="colC5">
-            <?= Html::a('О компании MITWORK', ['/site/about']) ?>
-        </div>
-        <div class="colC5 vLine">
-            <?= Html::a('Карта Сайта', ['#']) ?>
-        </div>
-        <div class="colC5 vLine">
-            <?= Html::a('Новости', ['/news/news/index']) ?>
-        </div>
-        <div class="colC5 vLine">
-            <?= Html::a('RSS', ['#']) ?>
-        </div>
-        <div class="colC5 vLine">
-            <?= Html::a('Контакты', ['/site/contact']) ?>
-        </div>
-    </div>
+  <div class = "container-fluid">
+      <div class="row center">
+          <div class="col-md-3">
+              <?= Html::a('О компании MITWORK', ['/site/about']) ?>
+          </div>
+          <div class="col-md-2 vLine">
+              <?= Html::a('Карта Сайта', ['#']) ?>
+          </div>
+          <div class="col-md-2 vLine">
+              <?= Html::a('Новости', ['/news/news/index']) ?>
+          </div>
+          <div class="col-md-2 vLine">
+              <?= Html::a('RSS', ['#']) ?>
+          </div>
+          <div class="col-md-3 vLine">
+              <?= Html::a('Контакты', ['/site/contact']) ?>
+          </div>
+      </div>
 
-    <div>
-        <div class="colC4">
-        </div>
-        <div class="colC4">
-            <?= Html::a('Условия использования', ['#']) ?>
-        </div>
-        <div class="colC4 vLine">
-            <?= Html::a('Политика конфиденциальности', ['#']) ?>
-        </div>
-    </div>
+      <div class="row center">
 
-    <div>
-            <c>ТOO MITWORK 2015 год. Все права защищены </c>
+          <div class="col-md-3 col-md-push-3">
+              <?= Html::a('Условия использования', ['#']) ?>
+          </div>
+
+          <div class="col-md-3 col-md-push-3 vLine">
+              <?= Html::a('Политика конфиденциальности', ['#']) ?>
+          </div>
+
+      </div>
+
+      <div class="row">
+              <c>ТOO MITWORK 2015 год. Все права защищены </c>
+      </div>
     </div>
 
 </footer>

@@ -28,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'MitWork',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -63,11 +63,38 @@ AppAsset::register($this);
 </div>
 
 <footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+  <div>
+      <div class="colC5">
+          <?= Html::a('О компании MITWORK', ['/site/about']) ?>
+      </div>
+      <div class="colC5 vLine">
+          <?= Html::a('Карта Сайта', ['#']) ?>
+      </div>
+      <div class="colC5 vLine">
+          <?= Html::a('Новости', ['/news/news/index']) ?>
+      </div>
+      <div class="colC5 vLine">
+          <?= Html::a('RSS', ['#']) ?>
+      </div>
+      <div class="colC5 vLine">
+          <?= Html::a('Контакты', ['/site/contact']) ?>
+      </div>
+  </div>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
+  <div>
+      <div class="colC4">
+      </div>
+      <div class="colC4">
+          <?= Html::a('Условия использования', ['#']) ?>
+      </div>
+      <div class="colC4 vLine">
+          <?= Html::a('Политика конфиденциальности', ['#']) ?>
+      </div>
+  </div>
+
+  <div>
+          <c>ТOO MITWORK 2015 год. Все права защищены </c>
+  </div>
 </footer>
 
 <?php $this->endBody() ?>

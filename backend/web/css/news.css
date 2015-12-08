@@ -1,3 +1,33 @@
 td{
   word-break: break-all;
 }
+.footer{
+  height: 60px;
+  padding-top: 20px;
+  display: block;
+  background-color: #FFFFFF;
+  border-top: 1px solid #000;
+}
+.footer div{
+  padding: 10px;
+  font-size: 16px;
+  color: #8d8d8d;
+}
+
+div.colC5 {
+    width: 19%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+div.colC4 {
+    width: 24%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+.vLine {
+    border-left: 1px solid #000000;
+    border-color: #8d8d8d;
+}
